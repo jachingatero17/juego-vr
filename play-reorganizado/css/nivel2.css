@@ -1,0 +1,95 @@
+/*
+======================================================
+ARCHIVO: nivel2.css
+UBICACION: play-reorganizado/css/
+VERSION: 1.1 - Estilos seccionados
+ULTIMA ACTUALIZACION: 2026-04-25 15:50
+
+PROPOSITO:
+Contiene los estilos visuales extraidos desde nivel2.html para mantener
+la presentacion separada de la estructura HTML.
+
+======================================================
+HISTORIAL DE CAMBIOS:
+---
+[1.1] - 2026-04-25 15:50
+- Se agregan bloques de lectura para base, overlays, HUD, controles y estilos del nivel.
+
+[1.0] - 2026-04-25 15:41
+- Archivo CSS creado desde estilos embebidos del HTML original.
+======================================================
+*/
+
+/* ======================================================
+   BLOQUE 1: BASE DE PANTALLA
+   ====================================================== */
+body { margin: 0; font-family: 'Courier New', monospace; background: #000; overflow: hidden; touch-action: none; }
+
+        /* ======================================================
+           BLOQUE 2: PANTALLAS SUPERPUESTAS
+           Inicio y resultado visual del nivel.
+           ====================================================== */
+        .overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, #1a0a00 0%, #000 100%);
+            z-index: 2000; display: flex; flex-direction: column; align-items: center; justify-content: center;
+            color: #ff6600; text-align: center; border: 8px double #ff6600; box-sizing: border-box;
+        }
+        .terminal-box {
+            background: rgba(40, 10, 0, 0.95); padding: 50px;
+            border: 2px solid #ff6600; box-shadow: 0 0 40px #ff6600; border-radius: 20px;
+        }
+        /* ======================================================
+           BLOQUE 3: BOTONES PRINCIPALES
+           Acciones para iniciar, reintentar o volver.
+           ====================================================== */
+        .btn-systec {
+            margin-top: 35px; padding: 15px 45px; background: #ff6600; color: #000;
+            border: none; font-weight: bold; cursor: pointer; font-size: 20px;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+            transition: 0.3s;
+        }
+        /* ======================================================
+           BLOQUE 4: HUD DEL NIVEL
+           Datos visibles durante la partida.
+           ====================================================== */
+        #ui-top {
+            position: absolute; top: 20px; left: 20px; z-index: 10;
+            background: rgba(20,5,0,0.85); color: #ff6600; padding: 18px;
+            border: 2px solid #ff6600; border-radius: 10px; display: none;
+        }
+        /* ======================================================
+           BLOQUE 5: CONTROLES MOVILES
+           D-pad y boton de salto para dispositivos tactiles.
+           ====================================================== */
+        .controles-movil {
+            position: absolute; bottom: 20px; width: 100%;
+            display: none; justify-content: space-between; padding: 0 30px;
+            box-sizing: border-box; z-index: 1000; pointer-events: none;
+        }
+        .d-pad { display: grid; grid-template-columns: repeat(3, 55px); gap: 5px; pointer-events: auto; }
+        .d-btn, .btn-salto {
+            width: 55px; height: 55px; background: rgba(255, 102, 0, 0.2);
+            border: 2px solid #ff6600; color: #ff6600; display: flex;
+            align-items: center; justify-content: center; border-radius: 10px;
+            font-weight: bold; user-select: none; -webkit-user-select: none;
+        }
+        .btn-salto { width: 100px; height: 80px; font-size: 14px; pointer-events: auto; }
+
+/* ======================================================
+   BLOQUE 6: ESTILOS ESPECIFICOS DEL NIVEL 2
+   ====================================================== */
+.level-title { letter-spacing: 8px; margin: 0; color: #ff6600; }
+.level-subtitle { color: #ffaa00; margin: 10px 0; }
+.level-description { color: #ffcc88; font-size: 14px; }
+.nivel-valor { color: #ff6600; }
+.btn-volver-portal {
+    margin-top: 20px; background: rgba(255,102,0,0.1); border: 1px solid #ff6600; color: #ff6600;
+    cursor: pointer; font-family: inherit; font-size: 14px; padding: 12px; width: 100%;
+}
+.btn-ir-inicio {
+    margin-top: 15px; background: transparent; border: 1px solid #ff6600; color: #ff6600;
+    cursor: pointer; font-family: inherit; font-size: 14px; padding: 10px; width: 100%;
+}
+#game-over-screen { display: none; }
+
