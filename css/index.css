@@ -1,0 +1,130 @@
+/*
+======================================================
+ARCHIVO: index.css
+UBICACION: play-reorganizado/css/
+VERSION: 2.0 - Estilos del portal principal
+ULTIMA ACTUALIZACION: 2026-04-25 15:57
+
+PROPOSITO:
+Define la presentacion del portal principal del videojuego SENATIC,
+separado del estilo propio de cada nivel.
+
+======================================================
+HISTORIAL DE CAMBIOS:
+---
+[2.0] - 2026-04-25 15:57
+- index.css pasa a estilos exclusivos del portal principal.
+======================================================
+*/
+
+/* ======================================================
+   BLOQUE 1: BASE DEL PORTAL
+   ====================================================== */
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Courier New', monospace;
+    background: radial-gradient(circle, #0a1a2e 0%, #000 72%);
+    color: #00ffcc;
+    overflow: hidden;
+}
+
+.portal-shell {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+/* ======================================================
+   BLOQUE 2: TARJETA DE ENTRADA
+   ====================================================== */
+.portal-card {
+    width: min(620px, 100%);
+    padding: 44px;
+    border: 8px double #00ffcc;
+    border-radius: 22px;
+    background: rgba(0, 20, 40, 0.95);
+    box-shadow: 0 0 44px rgba(0, 255, 204, 0.55);
+    text-align: center;
+}
+
+.portal-kicker {
+    margin: 0 0 10px;
+    letter-spacing: 8px;
+    font-size: 14px;
+}
+
+.portal-title {
+    margin: 0;
+    letter-spacing: 12px;
+    font-size: clamp(32px, 8vw, 58px);
+}
+
+.portal-description {
+    margin: 22px auto 28px;
+    max-width: 480px;
+    color: #b8fff2;
+    line-height: 1.5;
+}
+
+/* ======================================================
+   BLOQUE 3: FORMULARIO Y ACCIONES
+   ====================================================== */
+.portal-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input {
+    width: min(320px, 100%);
+    padding: 15px;
+    border: 1px solid #00ffcc;
+    background: #000;
+    color: #00ffcc;
+    font-family: inherit;
+    font-size: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.portal-actions {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.btn-systec,
+.btn-secundario {
+    min-width: 180px;
+    padding: 15px 28px;
+    border: 1px solid #00ffcc;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-systec {
+    background: #00ffcc;
+    color: #000;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.btn-secundario {
+    background: rgba(0,255,204,0.1);
+    color: #00ffcc;
+}
+
+.portal-status {
+    min-height: 20px;
+    margin: 24px 0 0;
+    color: #b8fff2;
+    font-size: 14px;
+}
